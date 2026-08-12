@@ -4,74 +4,73 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ตารางเรียน/สอบ | ระบบบริการการศึกษา มหาวิทยาลัยแม่โจ้</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Kanit:wght@500;600;700&family=Prompt:wght@400;500;600&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="./schedule.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
   </head>
-  <body>
-    <div class="app-shell">
-      <header class="app-header">
-        <div class="header-inner">
+  <body class="min-h-screen bg-slate-50 text-slate-900 antialiased">
+    <div class="min-h-screen flex flex-col">
+      <header class="bg-white border-b border-slate-200">
+        <div class="mx-auto flex items-center gap-4 px-4 py-4 max-w-7xl">
           <button
-            class="menu-toggle"
             id="menuToggle"
             aria-expanded="false"
             aria-controls="sidebar"
+            class="flex h-10 w-10 items-center justify-center rounded-xl border border-slate-200 text-slate-700 transition hover:bg-slate-100"
           >
             <span class="sr-only">เปิดเมนู</span>
-            <span></span><span></span><span></span>
+            <span class="block h-0.5 w-5 bg-current"></span>
+            <span class="block h-0.5 w-5 bg-current mt-1"></span>
+            <span class="block h-0.5 w-5 bg-current mt-1"></span>
           </button>
 
-          <div class="brand-mark" aria-hidden="true">
-            <svg viewBox="0 0 48 48" width="26" height="26">
-              <path
-                d="M24 4 C 14 4, 6 12, 6 24 C 6 36, 14 44, 24 44 C 34 44, 42 36, 42 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="3"
-                stroke-linecap="round"
-              />
-              <path
-                d="M24 14 C 19 14, 15 18, 15 24 C 15 30, 19 34, 24 34"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="3"
-                stroke-linecap="round"
-                opacity="0.55"
-              />
-            </svg>
-          </div>
-          <div class="header-titles">
-            <span class="header-title">มหาวิทยาลัยแม่โจ้</span>
-            <span class="header-subtitle">ระบบบริการการศึกษา</span>
+          <div class="flex items-center gap-3">
+            <div class="rounded-2xl border border-slate-200 bg-slate-100 p-2 text-slate-700">
+              <svg viewBox="0 0 48 48" width="26" height="26" class="text-slate-700">
+                <path
+                  d="M24 4 C 14 4, 6 12, 6 24 C 6 36, 14 44, 24 44 C 34 44, 42 36, 42 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="3"
+                  stroke-linecap="round"
+                />
+                <path
+                  d="M24 14 C 19 14, 15 18, 15 24 C 15 30, 19 34, 24 34"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="3"
+                  stroke-linecap="round"
+                  opacity="0.55"
+                />
+              </svg>
+            </div>
+            <div>
+              <p class="text-sm font-semibold">มหาวิทยาลัยแม่โจ้</p>
+              <p class="text-xs text-slate-500">ระบบบริการการศึกษา</p>
+            </div>
           </div>
 
-          <div class="header-spacer"></div>
+          <div class="flex-1"></div>
 
-          <button class="lang-switch" type="button">
+          <button class="inline-flex items-center gap-2 rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm font-medium text-slate-700 shadow-sm transition hover:bg-slate-50">
             <span aria-hidden="true">🇹🇭</span> ภาษาไทย
           </button>
         </div>
       </header>
 
-      <div class="app-body">
-        <nav class="sidebar" id="sidebar" aria-label="เมนูหลัก">
-          <ul class="sidebar-menu">
-            <li><a href="#" class="sidebar-link is-active">เมนูหลัก</a></li>
+      <div class="flex flex-1 flex-col lg:flex-row">
+        <nav
+          id="sidebar"
+          aria-label="เมนูหลัก"
+          class="order-2 border-t border-slate-200 bg-white px-4 py-5 lg:order-1 lg:w-72 lg:border-t-0 lg:border-r"
+        >
+          <ul class="space-y-2">
             <li>
-              <a href="#" class="sidebar-link">
-                <svg
-                  viewBox="0 0 24 24"
-                  width="16"
-                  height="16"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                >
+              <a href="#" class="block rounded-2xl bg-slate-900 px-4 py-3 text-sm font-semibold text-white shadow-sm">
+                เมนูหลัก
+              </a>
+            </li>
+            <li>
+              <a href="#" class="flex items-center gap-2 rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-700 transition hover:bg-slate-50">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
                   <path d="M15 18l-6-6 6-6" />
                 </svg>
                 ถอยกลับ
@@ -80,350 +79,723 @@
           </ul>
         </nav>
 
-        <main class="app-main">
-          <div class="student-chip">
-            <span class="student-id">รหัสนักศึกษา</span>
-            <span class="student-sep">:</span>
-            <span class="student-name">ชื่อผู้ใช้งาน</span>
+        <main class="order-1 flex-1 px-4 py-6 sm:px-6 lg:px-8">
+          <div class="mx-auto max-w-7xl">
+            <div class="flex flex-wrap items-center gap-3 rounded-3xl border border-slate-200 bg-white px-4 py-3 shadow-sm sm:justify-between">
+              <div class="flex items-center gap-2 text-sm">
+                <span class="text-slate-500">รหัสนักศึกษา</span>
+                <span class="text-slate-300">:</span>
+                <span class="font-semibold">ชื่อผู้ใช้งาน</span>
+              </div>
+            </div>
+
+            <section class="mt-6 space-y-6">
+              <div class="space-y-3">
+                <h1 id="page-title" class="text-2xl font-semibold tracking-tight text-slate-900">
+                  ตารางเรียน/สอบของรายวิชาที่ลงทะเบียนไว้แล้ว
+                </h1>
+              </div>
+
+              <article class="rounded-3xl border border-slate-200 bg-white p-5 shadow-sm">
+                <dl class="grid gap-4 sm:grid-cols-2">
+                  <div class="space-y-1">
+                    <dt class="text-sm text-slate-500">ชื่อ</dt>
+                    <dd class="text-sm font-semibold text-slate-900">ชื่อ - นามสกุล</dd>
+                  </div>
+                  <div class="space-y-1">
+                    <dt class="text-sm text-slate-500">สถานภาพ</dt>
+                    <dd><span class="rounded-full bg-emerald-100 px-3 py-1 text-xs font-semibold text-emerald-700">กำลังศึกษา</span></dd>
+                  </div>
+                  <div class="space-y-1">
+                    <dt class="text-sm text-slate-500">คณะ</dt>
+                    <dd class="text-sm font-semibold text-slate-900">วิทยาศาสตร์</dd>
+                  </div>
+                  <div class="space-y-1">
+                    <dt class="text-sm text-slate-500">หลักสูตร</dt>
+                    <dd class="text-sm font-semibold text-slate-900">วิทยาศาสตรบัณฑิต สาขาวิชาวิทยาการคอมพิวเตอร์</dd>
+                  </div>
+                  <div class="space-y-1">
+                    <dt class="text-sm text-slate-500">อ.ที่ปรึกษา</dt>
+                    <dd class="text-sm font-semibold text-slate-900">อ.ปวีณ เขื่อนแก้ว</dd>
+                  </div>
+                </dl>
+
+                <div class="mt-5 flex flex-col gap-3 rounded-3xl bg-slate-50 p-4 sm:flex-row sm:items-center sm:justify-between">
+                  <button type="button" class="inline-flex items-center justify-center rounded-2xl border border-slate-200 bg-white px-3 py-2 text-sm text-slate-700 transition hover:bg-slate-100">
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.4">
+                      <path d="M15 18l-6-6 6-6" />
+                    </svg>
+                  </button>
+                  <div class="text-sm font-semibold text-slate-900">ปีการศึกษา 25XX / X</div>
+                  <button type="button" class="inline-flex items-center justify-center rounded-2xl border border-slate-200 bg-white px-3 py-2 text-sm text-slate-700 transition hover:bg-slate-100">
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.4">
+                      <path d="M9 18l6-6-6-6" />
+                    </svg>
+                  </button>
+                  <div class="text-sm text-slate-500">ระหว่าง 5/10/25XX - 11/10/25XX</div>
+                </div>
+              </article>
+
+              <article class="rounded-3xl border border-slate-200 bg-white p-5 shadow-sm">
+                <h2 class="text-lg font-semibold text-slate-900">ตารางเรียน</h2>
+
+                <div class="mt-4 overflow-x-auto rounded-3xl border border-slate-200">
+                  <table class="min-w-full text-sm">
+                    <thead class="bg-slate-50">
+                      <tr>
+                        <th class="whitespace-nowrap px-4 py-3 text-left font-semibold text-slate-600">Day / Time</th>
+                        <th class="whitespace-nowrap px-4 py-3 text-left font-semibold text-slate-600">8:00-9:00</th>
+                        <th class="whitespace-nowrap px-4 py-3 text-left font-semibold text-slate-600">9:00-10:00</th>
+                        <th class="whitespace-nowrap px-4 py-3 text-left font-semibold text-slate-600">10:00-11:00</th>
+                        <th class="whitespace-nowrap px-4 py-3 text-left font-semibold text-slate-600">11:00-12:00</th>
+                        <th class="whitespace-nowrap px-4 py-3 text-left font-semibold text-slate-600">12:00-13:00</th>
+                        <th class="whitespace-nowrap px-4 py-3 text-left font-semibold text-slate-600">13:00-14:00</th>
+                        <th class="whitespace-nowrap px-4 py-3 text-left font-semibold text-slate-600">14:00-15:00</th>
+                        <th class="whitespace-nowrap px-4 py-3 text-left font-semibold text-slate-600">15:00-16:00</th>
+                        <th class="whitespace-nowrap px-4 py-3 text-left font-semibold text-slate-600">16:00-17:00</th>
+                      </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-200 bg-white">
+                      <tr>
+                        <th class="whitespace-nowrap px-4 py-4 text-left font-semibold text-slate-700">จันทร์</th>
+                        <td class="px-4 py-4"></td>
+                        <td class="px-4 py-4" colspan="2">
+                          <div class="rounded-3xl bg-slate-100 p-3">
+                            <a href="#" class="block text-sm font-semibold text-slate-900">10301231</a>
+                            <p class="text-xs text-slate-500">(3) กลุ่ม 1 · Lab คอม3-4 105</p>
+                          </div>
+                        </td>
+                        <td class="px-4 py-4"></td>
+                        <td class="px-4 py-4"></td>
+                        <td class="px-4 py-4" colspan="2">
+                          <div class="rounded-3xl bg-slate-100 p-3">
+                            <a href="#" class="block text-sm font-semibold text-slate-900">10301225</a>
+                            <p class="text-xs text-slate-500">(3) กลุ่ม 1 · Lab คอม3-4 105</p>
+                          </div>
+                        </td>
+                        <td class="px-4 py-4"></td>
+                        <td class="px-4 py-4"></td>
+                      </tr>
+                      <tr>
+                        <th class="whitespace-nowrap px-4 py-4 text-left font-semibold text-slate-700">อังคาร</th>
+                        <td class="px-4 py-4" colspan="2">
+                          <div class="rounded-3xl bg-slate-100 p-3">
+                            <a href="#" class="block text-sm font-semibold text-slate-900">10301211</a>
+                            <p class="text-xs text-slate-500">(3) กลุ่ม 1 · 3203 141</p>
+                          </div>
+                        </td>
+                        <td class="px-4 py-4" colspan="2">
+                          <div class="rounded-3xl bg-slate-100 p-3">
+                            <a href="#" class="block text-sm font-semibold text-slate-900">10700313</a>
+                            <p class="text-xs text-slate-500">(3) กลุ่ม 2 · 80-501 147</p>
+                          </div>
+                        </td>
+                        <td class="px-4 py-4"></td>
+                        <td class="px-4 py-4"></td>
+                        <td class="px-4 py-4"></td>
+                        <td class="px-4 py-4" colspan="2">
+                          <div class="rounded-3xl bg-slate-100 p-3">
+                            <a href="#" class="block text-sm font-semibold text-slate-900">10301222</a>
+                            <p class="text-xs text-slate-500">(3) กลุ่ม 1 · Lab คอม3-4 105</p>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th class="whitespace-nowrap px-4 py-4 text-left font-semibold text-slate-700">พุธ</th>
+                        <td class="px-4 py-4"></td>
+                        <td class="px-4 py-4" colspan="2">
+                          <div class="rounded-3xl bg-slate-100 p-3">
+                            <a href="#" class="block text-sm font-semibold text-slate-900">10301222</a>
+                            <p class="text-xs text-slate-500">(3) กลุ่ม 1 · 3203 141</p>
+                          </div>
+                        </td>
+                        <td class="px-4 py-4"></td>
+                        <td class="px-4 py-4"></td>
+                        <td class="px-4 py-4"></td>
+                        <td class="px-4 py-4"></td>
+                        <td class="px-4 py-4"></td>
+                        <td class="px-4 py-4"></td>
+                      </tr>
+                      <tr>
+                        <th class="whitespace-nowrap px-4 py-4 text-left font-semibold text-slate-700">พฤหัสบดี</th>
+                        <td class="px-4 py-4"></td>
+                        <td class="px-4 py-4" colspan="2">
+                          <div class="rounded-3xl bg-slate-100 p-3">
+                            <a href="#" class="block text-sm font-semibold text-slate-900">10301223</a>
+                            <p class="text-xs text-slate-500">(3) กลุ่ม 1 · Lab คอม3-4 105</p>
+                          </div>
+                        </td>
+                        <td class="px-4 py-4"></td>
+                        <td class="px-4 py-4"></td>
+                        <td class="px-4 py-4" colspan="2">
+                          <div class="rounded-3xl bg-slate-100 p-3">
+                            <a href="#" class="block text-sm font-semibold text-slate-900">10301231</a>
+                            <p class="text-xs text-slate-500">(3) กลุ่ม 1 · Lab คอม3-4 105</p>
+                          </div>
+                        </td>
+                        <td class="px-4 py-4"></td>
+                        <td class="px-4 py-4"></td>
+                      </tr>
+                      <tr>
+                        <th class="whitespace-nowrap px-4 py-4 text-left font-semibold text-slate-700">ศุกร์</th>
+                        <td class="px-4 py-4" colspan="2">
+                          <div class="rounded-3xl bg-slate-100 p-3">
+                            <a href="#" class="block text-sm font-semibold text-slate-900">10301211</a>
+                            <p class="text-xs text-slate-500">(3) กลุ่ม 1 · 3203 141</p>
+                          </div>
+                        </td>
+                        <td class="px-4 py-4" colspan="2">
+                          <div class="rounded-3xl bg-slate-100 p-3">
+                            <a href="#" class="block text-sm font-semibold text-slate-900">10700313</a>
+                            <p class="text-xs text-slate-500">(3) กลุ่ม 2 · 80-501 147</p>
+                          </div>
+                        </td>
+                        <td class="px-4 py-4"></td>
+                        <td class="px-4 py-4"></td>
+                        <td class="px-4 py-4" colspan="2">
+                          <div class="rounded-3xl bg-slate-100 p-3">
+                            <a href="#" class="block text-sm font-semibold text-slate-900">10301225</a>
+                            <p class="text-xs text-slate-500">(3) กลุ่ม 1 · Lab คอม3-4 105</p>
+                          </div>
+                        </td>
+                        <td class="px-4 py-4"></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                <p class="mt-3 text-sm text-slate-500">← เลื่อนซ้าย–ขวาเพื่อดูตารางเต็ม →</p>
+                <p class="mt-3 text-sm text-slate-500">
+                  * ข้อมูลที่ปรากฏอยู่ในตารางเรียนประกอบด้วย รหัสวิชา (จำนวนหน่วยกิต) กลุ่ม, ห้องเรียนและอาคาร ตามลำดับ
+                </p>
+              </article>
+
+              <article class="rounded-3xl border border-slate-200 bg-white p-5 shadow-sm">
+                <h2 class="text-lg font-semibold text-slate-900">ตารางสอบ</h2>
+
+                <div class="mt-4 overflow-x-auto rounded-3xl border border-slate-200">
+                  <table class="min-w-full text-sm">
+                    <thead class="bg-slate-50">
+                      <tr>
+                        <th class="px-4 py-3 text-left font-semibold text-slate-600">รหัสวิชา</th>
+                        <th class="px-4 py-3 text-left font-semibold text-slate-600">ชื่อรายวิชา</th>
+                        <th class="px-4 py-3 text-left font-semibold text-slate-600">กลุ่ม</th>
+                        <th class="px-4 py-3 text-left font-semibold text-slate-600">สอบกลางภาค</th>
+                        <th class="px-4 py-3 text-left font-semibold text-slate-600">สอบปลายภาค</th>
+                      </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-200 bg-white">
+                      <tr>
+                        <th class="px-4 py-4 text-left font-semibold text-slate-700">10301211</th>
+                        <td class="px-4 py-4">
+                          <div class="text-sm font-semibold text-slate-900">คณิตศาสตร์สำหรับวิทยาศาสตร์คอมพิวเตอร์</div>
+                          <div class="text-xs text-slate-500">Mathematics for Computer Science</div>
+                        </td>
+                        <td class="px-4 py-4">1</td>
+                        <td class="px-4 py-4"> (C) 28 ส.ค. 2569<br />เวลา 08:00-11:00</td>
+                        <td class="px-4 py-4"> (C) 27 ต.ค. 2569<br />เวลา 08:00-11:00</td>
+                      </tr>
+                      <tr>
+                        <th class="px-4 py-4 text-left font-semibold text-slate-700">10301222</th>
+                        <td class="px-4 py-4">
+                          <div class="text-sm font-semibold text-slate-900">โครงสร้างข้อมูลและอัลกอริทึม</div>
+                          <div class="text-xs text-slate-500">Data Structure and Algorithm</div>
+                        </td>
+                        <td class="px-4 py-4">1</td>
+                        <td class="px-4 py-4 text-slate-500">—</td>
+                        <td class="px-4 py-4"> (C) 20 ต.ค. 2569<br />เวลา 12:00-15:00</td>
+                      </tr>
+                      <tr>
+                        <th class="px-4 py-4 text-left font-semibold text-slate-700">10301223</th>
+                        <td class="px-4 py-4">
+                          <div class="text-sm font-semibold text-slate-900">ฐานข้อมูลเชิงสัมพันธ์</div>
+                          <div class="text-xs text-slate-500">Structure Relational Database</div>
+                        </td>
+                        <td class="px-4 py-4">1</td>
+                        <td class="px-4 py-4"> (C) 26 ส.ค. 2569<br />เวลา 15:30-18:30</td>
+                        <td class="px-4 py-4"> (C) 22 ต.ค. 2569<br />เวลา 15:30-18:30</td>
+                      </tr>
+                      <tr>
+                        <th class="px-4 py-4 text-left font-semibold text-slate-700">10301225</th>
+                        <td class="px-4 py-4">
+                          <div class="text-sm font-semibold text-slate-900">วิศวกรรมซอฟต์แวร์</div>
+                          <div class="text-xs text-slate-500">Software Engineering</div>
+                        </td>
+                        <td class="px-4 py-4">1</td>
+                        <td class="px-4 py-4 text-slate-500">—</td>
+                        <td class="px-4 py-4 text-slate-500">—</td>
+                      </tr>
+                      <tr>
+                        <th class="px-4 py-4 text-left font-semibold text-slate-700">10301231</th>
+                        <td class="px-4 py-4">
+                          <div class="text-sm font-semibold text-slate-900">เว็บเทคโนโลยี</div>
+                          <div class="text-xs text-slate-500">Web Technology</div>
+                        </td>
+                        <td class="px-4 py-4">1</td>
+                        <td class="px-4 py-4 text-slate-500">—</td>
+                        <td class="px-4 py-4 text-slate-500">—</td>
+                      </tr>
+                      <tr>
+                        <th class="px-4 py-4 text-left font-semibold text-slate-700">10700313</th>
+                        <td class="px-4 py-4">
+                          <div class="text-sm font-semibold text-slate-900">ภาษาอังกฤษเชิงวิทยาศาสตร์และนวัตกรรม</div>
+                          <div class="text-xs text-slate-500">English for Science and Innovation</div>
+                        </td>
+                        <td class="px-4 py-4">2</td>
+                        <td class="px-4 py-4 text-slate-500">—</td>
+                        <td class="px-4 py-4 text-slate-500">—</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                <p class="mt-3 text-sm text-slate-500">← เลื่อนซ้าย–ขวาเพื่อดูตารางเต็ม →</p>
+
+                <div class="mt-4 flex flex-wrap gap-2 text-sm text-slate-500">
+                  <span class="font-semibold text-slate-700">หมายเหตุ</span>
+                  <span class="rounded-full bg-slate-100 px-3 py-1">C = Lecture</span>
+                  <span class="rounded-full bg-slate-100 px-3 py-1">L = Lab</span>
+                  <span class="rounded-full bg-slate-100 px-3 py-1">R = ประชุม</span>
+                  <span class="rounded-full bg-slate-100 px-3 py-1">S = Self Study</span>
+                  <span class="rounded-full bg-slate-100 px-3 py-1">T = คิว</span>
+                </div>
+              </article>
+
+              <article class="rounded-3xl border border-slate-200 bg-white p-5 shadow-sm">
+                <h2 class="text-lg font-semibold text-slate-900">Thesis</h2>
+                <div class="mt-4 rounded-3xl border border-dashed border-slate-200 bg-slate-50 px-4 py-6 text-center text-sm text-slate-500">
+                  * ไม่มีข้อมูล *
+                </div>
+              </article>
+
+              <a href="#page-title" class="inline-flex items-center gap-2 text-sm font-medium text-slate-700 transition hover:text-slate-900">
+                <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4">
+                  <path d="M12 19V5M5 12l7-7 7 7" />
+                </svg>
+                กลับขึ้นด้านบน
+              </a>
+            </section>
           </div>
-
-          <section class="page-section" aria-labelledby="page-title">
-            <h1 id="page-title" class="page-title">
-              ตารางเรียน/สอบของรายวิชาที่ลงทะเบียนไว้แล้ว
-            </h1>
-
-            <article class="data-card">
-              <dl class="profile-grid">
-                <div class="profile-row">
-                  <dt>ชื่อ</dt>
-                  <dd>ชื่อ - นามสกุล</dd>
-                </div>
-                <div class="profile-row">
-                  <dt>สถานภาพ</dt>
-                  <dd><span class="status-tag">กำลังศึกษา</span></dd>
-                </div>
-                <div class="profile-row">
-                  <dt>คณะ</dt>
-                  <dd>วิทยาศาสตร์</dd>
-                </div>
-                <div class="profile-row">
-                  <dt>หลักสูตร</dt>
-                  <dd>วิทยาศาสตรบัณฑิต สาขาวิชาวิทยาการคอมพิวเตอร์</dd>
-                </div>
-                <div class="profile-row">
-                  <dt>อ.ที่ปรึกษา</dt>
-                  <dd>อ.ปวีณ เขื่อนแก้ว</dd>
-                </div>
-              </dl>
-
-              <div class="term-switcher">
-                <button
-                  type="button"
-                  class="term-arrow"
-                  aria-label="ภาคการศึกษาก่อนหน้า"
-                >
-                  <svg
-                    viewBox="0 0 24 24"
-                    width="16"
-                    height="16"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2.4"
-                  >
-                    <path d="M15 18l-6-6 6-6" />
-                  </svg>
-                </button>
-                <span class="term-label">ปีการศึกษา 25XX / X</span>
-                <button
-                  type="button"
-                  class="term-arrow"
-                  aria-label="ภาคการศึกษาถัดไป"
-                >
-                  <svg
-                    viewBox="0 0 24 24"
-                    width="16"
-                    height="16"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2.4"
-                  >
-                    <path d="M9 18l6-6-6-6" />
-                  </svg>
-                </button>
-                <span class="term-range">ระหว่าง 5/10/25XX - 11/10/25XX</span>
-              </div>
-            </article>
-
-            <article class="data-card">
-              <h2 class="data-card-title">ตารางเรียน</h2>
-
-              <div
-                class="table-scroll"
-                tabindex="0"
-                role="region"
-                aria-label="ตารางเรียน เลื่อนซ้ายขวาเพื่อดูเพิ่มเติม"
-              >
-                <table class="timetable">
-                  <thead>
-                    <tr>
-                      <th scope="col" class="corner-cell">Day / Time</th>
-                      <th scope="col">8:00-9:00</th>
-                      <th scope="col">9:00-10:00</th>
-                      <th scope="col">10:00-11:00</th>
-                      <th scope="col">11:00-12:00</th>
-                      <th scope="col">12:00-13:00</th>
-                      <th scope="col">13:00-14:00</th>
-                      <th scope="col">14:00-15:00</th>
-                      <th scope="col">15:00-16:00</th>
-                      <th scope="col">16:00-17:00</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <th scope="row">จันทร์</th>
-                      <td></td>
-                      <td colspan="2" class="class-cell">
-                        <a href="#" class="class-code">10301231</a>
-                        <span class="class-meta"
-                          >(3) กลุ่ม 1 · Lab คอม3-4 105</span
-                        >
-                      </td>
-                      <td></td>
-                      <td></td>
-                      <td colspan="2" class="class-cell">
-                        <a href="#" class="class-code">10301225</a>
-                        <span class="class-meta"
-                          >(3) กลุ่ม 1 · Lab คอม3-4 105</span
-                        >
-                      </td>
-                      <td></td>
-                      <td></td>
-                    </tr>
-                    <tr>
-                      <th scope="row">อังคาร</th>
-                      <td colspan="2" class="class-cell">
-                        <a href="#" class="class-code">10301211</a>
-                        <span class="class-meta">(3) กลุ่ม 1 · 3203 141</span>
-                      </td>
-                      <td colspan="2" class="class-cell">
-                        <a href="#" class="class-code">10700313</a>
-                        <span class="class-meta">(3) กลุ่ม 2 · 80-501 147</span>
-                      </td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td colspan="2" class="class-cell">
-                        <a href="#" class="class-code">10301222</a>
-                        <span class="class-meta"
-                          >(3) กลุ่ม 1 · Lab คอม3-4 105</span
-                        >
-                      </td>
-                    </tr>
-                    <tr>
-                      <th scope="row">พุธ</th>
-                      <td></td>
-                      <td colspan="2" class="class-cell">
-                        <a href="#" class="class-code">10301222</a>
-                        <span class="class-meta">(3) กลุ่ม 1 · 3203 141</span>
-                      </td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                    </tr>
-                    <tr>
-                      <th scope="row">พฤหัสบดี</th>
-                      <td></td>
-                      <td colspan="2" class="class-cell">
-                        <a href="#" class="class-code">10301223</a>
-                        <span class="class-meta"
-                          >(3) กลุ่ม 1 · Lab คอม3-4 105</span
-                        >
-                      </td>
-                      <td></td>
-                      <td></td>
-                      <td colspan="2" class="class-cell">
-                        <a href="#" class="class-code">10301231</a>
-                        <span class="class-meta"
-                          >(3) กลุ่ม 1 · Lab คอม3-4 105</span
-                        >
-                      </td>
-                      <td></td>
-                      <td></td>
-                    </tr>
-                    <tr>
-                      <th scope="row">ศุกร์</th>
-                      <td colspan="2" class="class-cell">
-                        <a href="#" class="class-code">10301211</a>
-                        <span class="class-meta">(3) กลุ่ม 1 · 3203 141</span>
-                      </td>
-                      <td colspan="2" class="class-cell">
-                        <a href="#" class="class-code">10700313</a>
-                        <span class="class-meta">(3) กลุ่ม 2 · 80-501 147</span>
-                      </td>
-                      <td></td>
-                      <td></td>
-                      <td colspan="2" class="class-cell">
-                        <a href="#" class="class-code">10301225</a>
-                        <span class="class-meta"
-                          >(3) กลุ่ม 1 · Lab คอม3-4 105</span
-                        >
-                      </td>
-                      <td></td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-              <p class="scroll-hint">← เลื่อนซ้าย–ขวาเพื่อดูตารางเต็ม →</p>
-              <p class="table-note">
-                * ข้อมูลที่ปรากฏอยู่ในตารางเรียนประกอบด้วย รหัสวิชา
-                (จำนวนหน่วยกิต) กลุ่ม, ห้องเรียนและอาคาร ตามลำดับ
-              </p>
-            </article>
-
-            <article class="data-card">
-              <h2 class="data-card-title">ตารางสอบ</h2>
-
-              <div
-                class="table-scroll"
-                tabindex="0"
-                role="region"
-                aria-label="ตารางสอบ เลื่อนซ้ายขวาเพื่อดูเพิ่มเติม"
-              >
-                <table class="exam-table">
-                  <thead>
-                    <tr>
-                      <th scope="col">รหัสวิชา</th>
-                      <th scope="col">ชื่อรายวิชา</th>
-                      <th scope="col">กลุ่ม</th>
-                      <th scope="col">สอบกลางภาค</th>
-                      <th scope="col">สอบปลายภาค</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <th scope="row">10301211</th>
-                      <td>
-                        <span class="course-th"
-                          >คณิตศาสตร์สำหรับวิทยาการคอมพิวเตอร์</span
-                        >
-                        <span class="course-en"
-                          >Mathematics for Computer Science</span
-                        >
-                      </td>
-                      <td>1</td>
-                      <td>(C) 28 ส.ค. 2569<br />เวลา 08:00-11:00</td>
-                      <td>(C) 27 ต.ค. 2569<br />เวลา 08:00-11:00</td>
-                    </tr>
-                    <tr>
-                      <th scope="row">10301222</th>
-                      <td>
-                        <span class="course-th"
-                          >โครงสร้างข้อมูลและอัลกอริทึม</span
-                        >
-                        <span class="course-en"
-                          >Data Structure and Algorithm</span
-                        >
-                      </td>
-                      <td>1</td>
-                      <td class="muted">—</td>
-                      <td>(C) 20 ต.ค. 2569<br />เวลา 12:00-15:00</td>
-                    </tr>
-                    <tr>
-                      <th scope="row">10301223</th>
-                      <td>
-                        <span class="course-th">ฐานข้อมูลเชิงสัมพันธ์</span>
-                        <span class="course-en"
-                          >Structure Relational Database</span
-                        >
-                      </td>
-                      <td>1</td>
-                      <td>(C) 26 ส.ค. 2569<br />เวลา 15:30-18:30</td>
-                      <td>(C) 22 ต.ค. 2569<br />เวลา 15:30-18:30</td>
-                    </tr>
-                    <tr>
-                      <th scope="row">10301225</th>
-                      <td>
-                        <span class="course-th">วิศวกรรมซอฟต์แวร์</span>
-                        <span class="course-en">Software Engineering</span>
-                      </td>
-                      <td>1</td>
-                      <td class="muted">—</td>
-                      <td class="muted">—</td>
-                    </tr>
-                    <tr>
-                      <th scope="row">10301231</th>
-                      <td>
-                        <span class="course-th">เว็บเทคโนโลยี</span>
-                        <span class="course-en">Web Technology</span>
-                      </td>
-                      <td>1</td>
-                      <td class="muted">—</td>
-                      <td class="muted">—</td>
-                    </tr>
-                    <tr>
-                      <th scope="row">10700313</th>
-                      <td>
-                        <span class="course-th"
-                          >ภาษาอังกฤษเชิงวิทยาศาสตร์และนวัตกรรม</span
-                        >
-                        <span class="course-en"
-                          >English for Science and Innovation</span
-                        >
-                      </td>
-                      <td>2</td>
-                      <td class="muted">—</td>
-                      <td class="muted">—</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-              <p class="scroll-hint">← เลื่อนซ้าย–ขวาเพื่อดูตารางเต็ม →</p>
-
-              <div class="legend-row">
-                <span class="legend-note-label">หมายเหตุ</span>
-                <span class="legend-chip"><b>C</b> = Lecture</span>
-                <span class="legend-chip"><b>L</b> = Lab</span>
-                <span class="legend-chip"><b>R</b> = ประชุม</span>
-                <span class="legend-chip"><b>S</b> = Self Study</span>
-                <span class="legend-chip"><b>T</b> = คิว</span>
-              </div>
-            </article>
-
-            <article class="data-card">
-              <h2 class="data-card-title">Thesis</h2>
-              <div class="empty-state">* ไม่มีข้อมูล *</div>
-            </article>
-
-            <a href="#page-title" class="to-top">
-              <svg
-                viewBox="0 0 24 24"
-                width="14"
-                height="14"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2.4"
-              >
-                <path d="M12 19V5M5 12l7-7 7 7" />
-              </svg>
-              กลับขึ้นด้านบน
-            </a>
-          </section>
         </main>
       </div>
 
-      <footer class="app-footer">
-        <div class="footer-inner">
-          <ul class="footer-links">
-            <li><a href="#">สนอ.</a></li>
-            <li><a href="#">กยศ.</a></li>
-            <li><a href="#">สมศ.</a></li>
-            <li><a href="#">Vision Net Co., Ltd.</a></li>
+      <footer class="border-t border-slate-200 bg-white">
+        <div class="mx-auto flex flex-col gap-4 px-4 py-5 text-sm text-slate-600 sm:flex-row sm:items-center sm:justify-between max-w-7xl">
+          <ul class="flex flex-wrap gap-3">
+            <li><a href="#" class="transition hover:text-slate-900">สนอ.</a></li>
+            <li><a href="#" class="transition hover:text-slate-900">กยศ.</a></li>
+            <li><a href="#" class="transition hover:text-slate-900">สมศ.</a></li>
+            <li><a href="#" class="transition hover:text-slate-900">Vision Net Co., Ltd.</a></li>
           </ul>
-          <p class="footer-meta">
-            Powered by Vision Net, 1995 – 2010 &middot; Contact Staff:
-            กลุ่มภารกิจทะเบียนเรียน ประมวลผล และรับเข้า 0-5387-3458
+          <p class="text-slate-500">
+            Powered by Vision Net, 1995 – 2010 · Contact Staff: กลุ่มภารกิจทะเบียนเรียน ประมวลผล และรับเข้า 0-5387-3458
+          </p>
+        </div>
+      </footer>
+    </div>
+
+    <script>
+      const menuToggle = document.getElementById("menuToggle");
+      const sidebar = document.getElementById("sidebar");
+      menuToggle.addEventListener("click", () => {
+        const isOpen = sidebar.classList.toggle("is-open");
+        menuToggle.setAttribute("aria-expanded", String(isOpen));
+      });
+    </script>
+  </body>
+</html>
+```// filepath: c:\Users\footy\OneDrive\Desktop\Responsive Redesing\Schedule.html
+<!doctype html>
+<html lang="th">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ตารางเรียน/สอบ | ระบบบริการการศึกษา มหาวิทยาลัยแม่โจ้</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="min-h-screen bg-slate-50 text-slate-900 antialiased">
+    <div class="min-h-screen flex flex-col">
+      <header class="bg-white border-b border-slate-200">
+        <div class="mx-auto flex items-center gap-4 px-4 py-4 max-w-7xl">
+          <button
+            id="menuToggle"
+            aria-expanded="false"
+            aria-controls="sidebar"
+            class="flex h-10 w-10 items-center justify-center rounded-xl border border-slate-200 text-slate-700 transition hover:bg-slate-100"
+          >
+            <span class="sr-only">เปิดเมนู</span>
+            <span class="block h-0.5 w-5 bg-current"></span>
+            <span class="block h-0.5 w-5 bg-current mt-1"></span>
+            <span class="block h-0.5 w-5 bg-current mt-1"></span>
+          </button>
+
+          <div class="flex items-center gap-3">
+            <div class="rounded-2xl border border-slate-200 bg-slate-100 p-2 text-slate-700">
+              <svg viewBox="0 0 48 48" width="26" height="26" class="text-slate-700">
+                <path
+                  d="M24 4 C 14 4, 6 12, 6 24 C 6 36, 14 44, 24 44 C 34 44, 42 36, 42 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="3"
+                  stroke-linecap="round"
+                />
+                <path
+                  d="M24 14 C 19 14, 15 18, 15 24 C 15 30, 19 34, 24 34"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="3"
+                  stroke-linecap="round"
+                  opacity="0.55"
+                />
+              </svg>
+            </div>
+            <div>
+              <p class="text-sm font-semibold">มหาวิทยาลัยแม่โจ้</p>
+              <p class="text-xs text-slate-500">ระบบบริการการศึกษา</p>
+            </div>
+          </div>
+
+          <div class="flex-1"></div>
+
+          <button class="inline-flex items-center gap-2 rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm font-medium text-slate-700 shadow-sm transition hover:bg-slate-50">
+            <span aria-hidden="true">🇹🇭</span> ภาษาไทย
+          </button>
+        </div>
+      </header>
+
+      <div class="flex flex-1 flex-col lg:flex-row">
+        <nav
+          id="sidebar"
+          aria-label="เมนูหลัก"
+          class="order-2 border-t border-slate-200 bg-white px-4 py-5 lg:order-1 lg:w-72 lg:border-t-0 lg:border-r"
+        >
+          <ul class="space-y-2">
+            <li>
+              <a href="#" class="block rounded-2xl bg-slate-900 px-4 py-3 text-sm font-semibold text-white shadow-sm">
+                เมนูหลัก
+              </a>
+            </li>
+            <li>
+              <a href="#" class="flex items-center gap-2 rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-700 transition hover:bg-slate-50">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M15 18l-6-6 6-6" />
+                </svg>
+                ถอยกลับ
+              </a>
+            </li>
+          </ul>
+        </nav>
+
+        <main class="order-1 flex-1 px-4 py-6 sm:px-6 lg:px-8">
+          <div class="mx-auto max-w-7xl">
+            <div class="flex flex-wrap items-center gap-3 rounded-3xl border border-slate-200 bg-white px-4 py-3 shadow-sm sm:justify-between">
+              <div class="flex items-center gap-2 text-sm">
+                <span class="text-slate-500">รหัสนักศึกษา</span>
+                <span class="text-slate-300">:</span>
+                <span class="font-semibold">ชื่อผู้ใช้งาน</span>
+              </div>
+            </div>
+
+            <section class="mt-6 space-y-6">
+              <div class="space-y-3">
+                <h1 id="page-title" class="text-2xl font-semibold tracking-tight text-slate-900">
+                  ตารางเรียน/สอบของรายวิชาที่ลงทะเบียนไว้แล้ว
+                </h1>
+              </div>
+
+              <article class="rounded-3xl border border-slate-200 bg-white p-5 shadow-sm">
+                <dl class="grid gap-4 sm:grid-cols-2">
+                  <div class="space-y-1">
+                    <dt class="text-sm text-slate-500">ชื่อ</dt>
+                    <dd class="text-sm font-semibold text-slate-900">ชื่อ - นามสกุล</dd>
+                  </div>
+                  <div class="space-y-1">
+                    <dt class="text-sm text-slate-500">สถานภาพ</dt>
+                    <dd><span class="rounded-full bg-emerald-100 px-3 py-1 text-xs font-semibold text-emerald-700">กำลังศึกษา</span></dd>
+                  </div>
+                  <div class="space-y-1">
+                    <dt class="text-sm text-slate-500">คณะ</dt>
+                    <dd class="text-sm font-semibold text-slate-900">วิทยาศาสตร์</dd>
+                  </div>
+                  <div class="space-y-1">
+                    <dt class="text-sm text-slate-500">หลักสูตร</dt>
+                    <dd class="text-sm font-semibold text-slate-900">วิทยาศาสตรบัณฑิต สาขาวิชาวิทยาการคอมพิวเตอร์</dd>
+                  </div>
+                  <div class="space-y-1">
+                    <dt class="text-sm text-slate-500">อ.ที่ปรึกษา</dt>
+                    <dd class="text-sm font-semibold text-slate-900">อ.ปวีณ เขื่อนแก้ว</dd>
+                  </div>
+                </dl>
+
+                <div class="mt-5 flex flex-col gap-3 rounded-3xl bg-slate-50 p-4 sm:flex-row sm:items-center sm:justify-between">
+                  <button type="button" class="inline-flex items-center justify-center rounded-2xl border border-slate-200 bg-white px-3 py-2 text-sm text-slate-700 transition hover:bg-slate-100">
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.4">
+                      <path d="M15 18l-6-6 6-6" />
+                    </svg>
+                  </button>
+                  <div class="text-sm font-semibold text-slate-900">ปีการศึกษา 25XX / X</div>
+                  <button type="button" class="inline-flex items-center justify-center rounded-2xl border border-slate-200 bg-white px-3 py-2 text-sm text-slate-700 transition hover:bg-slate-100">
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.4">
+                      <path d="M9 18l6-6-6-6" />
+                    </svg>
+                  </button>
+                  <div class="text-sm text-slate-500">ระหว่าง 5/10/25XX - 11/10/25XX</div>
+                </div>
+              </article>
+
+              <article class="rounded-3xl border border-slate-200 bg-white p-5 shadow-sm">
+                <h2 class="text-lg font-semibold text-slate-900">ตารางเรียน</h2>
+
+                <div class="mt-4 overflow-x-auto rounded-3xl border border-slate-200">
+                  <table class="min-w-full text-sm">
+                    <thead class="bg-slate-50">
+                      <tr>
+                        <th class="whitespace-nowrap px-4 py-3 text-left font-semibold text-slate-600">Day / Time</th>
+                        <th class="whitespace-nowrap px-4 py-3 text-left font-semibold text-slate-600">8:00-9:00</th>
+                        <th class="whitespace-nowrap px-4 py-3 text-left font-semibold text-slate-600">9:00-10:00</th>
+                        <th class="whitespace-nowrap px-4 py-3 text-left font-semibold text-slate-600">10:00-11:00</th>
+                        <th class="whitespace-nowrap px-4 py-3 text-left font-semibold text-slate-600">11:00-12:00</th>
+                        <th class="whitespace-nowrap px-4 py-3 text-left font-semibold text-slate-600">12:00-13:00</th>
+                        <th class="whitespace-nowrap px-4 py-3 text-left font-semibold text-slate-600">13:00-14:00</th>
+                        <th class="whitespace-nowrap px-4 py-3 text-left font-semibold text-slate-600">14:00-15:00</th>
+                        <th class="whitespace-nowrap px-4 py-3 text-left font-semibold text-slate-600">15:00-16:00</th>
+                        <th class="whitespace-nowrap px-4 py-3 text-left font-semibold text-slate-600">16:00-17:00</th>
+                      </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-200 bg-white">
+                      <tr>
+                        <th class="whitespace-nowrap px-4 py-4 text-left font-semibold text-slate-700">จันทร์</th>
+                        <td class="px-4 py-4"></td>
+                        <td class="px-4 py-4" colspan="2">
+                          <div class="rounded-3xl bg-slate-100 p-3">
+                            <a href="#" class="block text-sm font-semibold text-slate-900">10301231</a>
+                            <p class="text-xs text-slate-500">(3) กลุ่ม 1 · Lab คอม3-4 105</p>
+                          </div>
+                        </td>
+                        <td class="px-4 py-4"></td>
+                        <td class="px-4 py-4"></td>
+                        <td class="px-4 py-4" colspan="2">
+                          <div class="rounded-3xl bg-slate-100 p-3">
+                            <a href="#" class="block text-sm font-semibold text-slate-900">10301225</a>
+                            <p class="text-xs text-slate-500">(3) กลุ่ม 1 · Lab คอม3-4 105</p>
+                          </div>
+                        </td>
+                        <td class="px-4 py-4"></td>
+                        <td class="px-4 py-4"></td>
+                      </tr>
+                      <tr>
+                        <th class="whitespace-nowrap px-4 py-4 text-left font-semibold text-slate-700">อังคาร</th>
+                        <td class="px-4 py-4" colspan="2">
+                          <div class="rounded-3xl bg-slate-100 p-3">
+                            <a href="#" class="block text-sm font-semibold text-slate-900">10301211</a>
+                            <p class="text-xs text-slate-500">(3) กลุ่ม 1 · 3203 141</p>
+                          </div>
+                        </td>
+                        <td class="px-4 py-4" colspan="2">
+                          <div class="rounded-3xl bg-slate-100 p-3">
+                            <a href="#" class="block text-sm font-semibold text-slate-900">10700313</a>
+                            <p class="text-xs text-slate-500">(3) กลุ่ม 2 · 80-501 147</p>
+                          </div>
+                        </td>
+                        <td class="px-4 py-4"></td>
+                        <td class="px-4 py-4"></td>
+                        <td class="px-4 py-4"></td>
+                        <td class="px-4 py-4" colspan="2">
+                          <div class="rounded-3xl bg-slate-100 p-3">
+                            <a href="#" class="block text-sm font-semibold text-slate-900">10301222</a>
+                            <p class="text-xs text-slate-500">(3) กลุ่ม 1 · Lab คอม3-4 105</p>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th class="whitespace-nowrap px-4 py-4 text-left font-semibold text-slate-700">พุธ</th>
+                        <td class="px-4 py-4"></td>
+                        <td class="px-4 py-4" colspan="2">
+                          <div class="rounded-3xl bg-slate-100 p-3">
+                            <a href="#" class="block text-sm font-semibold text-slate-900">10301222</a>
+                            <p class="text-xs text-slate-500">(3) กลุ่ม 1 · 3203 141</p>
+                          </div>
+                        </td>
+                        <td class="px-4 py-4"></td>
+                        <td class="px-4 py-4"></td>
+                        <td class="px-4 py-4"></td>
+                        <td class="px-4 py-4"></td>
+                        <td class="px-4 py-4"></td>
+                        <td class="px-4 py-4"></td>
+                      </tr>
+                      <tr>
+                        <th class="whitespace-nowrap px-4 py-4 text-left font-semibold text-slate-700">พฤหัสบดี</th>
+                        <td class="px-4 py-4"></td>
+                        <td class="px-4 py-4" colspan="2">
+                          <div class="rounded-3xl bg-slate-100 p-3">
+                            <a href="#" class="block text-sm font-semibold text-slate-900">10301223</a>
+                            <p class="text-xs text-slate-500">(3) กลุ่ม 1 · Lab คอม3-4 105</p>
+                          </div>
+                        </td>
+                        <td class="px-4 py-4"></td>
+                        <td class="px-4 py-4"></td>
+                        <td class="px-4 py-4" colspan="2">
+                          <div class="rounded-3xl bg-slate-100 p-3">
+                            <a href="#" class="block text-sm font-semibold text-slate-900">10301231</a>
+                            <p class="text-xs text-slate-500">(3) กลุ่ม 1 · Lab คอม3-4 105</p>
+                          </div>
+                        </td>
+                        <td class="px-4 py-4"></td>
+                        <td class="px-4 py-4"></td>
+                      </tr>
+                      <tr>
+                        <th class="whitespace-nowrap px-4 py-4 text-left font-semibold text-slate-700">ศุกร์</th>
+                        <td class="px-4 py-4" colspan="2">
+                          <div class="rounded-3xl bg-slate-100 p-3">
+                            <a href="#" class="block text-sm font-semibold text-slate-900">10301211</a>
+                            <p class="text-xs text-slate-500">(3) กลุ่ม 1 · 3203 141</p>
+                          </div>
+                        </td>
+                        <td class="px-4 py-4" colspan="2">
+                          <div class="rounded-3xl bg-slate-100 p-3">
+                            <a href="#" class="block text-sm font-semibold text-slate-900">10700313</a>
+                            <p class="text-xs text-slate-500">(3) กลุ่ม 2 · 80-501 147</p>
+                          </div>
+                        </td>
+                        <td class="px-4 py-4"></td>
+                        <td class="px-4 py-4"></td>
+                        <td class="px-4 py-4" colspan="2">
+                          <div class="rounded-3xl bg-slate-100 p-3">
+                            <a href="#" class="block text-sm font-semibold text-slate-900">10301225</a>
+                            <p class="text-xs text-slate-500">(3) กลุ่ม 1 · Lab คอม3-4 105</p>
+                          </div>
+                        </td>
+                        <td class="px-4 py-4"></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                <p class="mt-3 text-sm text-slate-500">← เลื่อนซ้าย–ขวาเพื่อดูตารางเต็ม →</p>
+                <p class="mt-3 text-sm text-slate-500">
+                  * ข้อมูลที่ปรากฏอยู่ในตารางเรียนประกอบด้วย รหัสวิชา (จำนวนหน่วยกิต) กลุ่ม, ห้องเรียนและอาคาร ตามลำดับ
+                </p>
+              </article>
+
+              <article class="rounded-3xl border border-slate-200 bg-white p-5 shadow-sm">
+                <h2 class="text-lg font-semibold text-slate-900">ตารางสอบ</h2>
+
+                <div class="mt-4 overflow-x-auto rounded-3xl border border-slate-200">
+                  <table class="min-w-full text-sm">
+                    <thead class="bg-slate-50">
+                      <tr>
+                        <th class="px-4 py-3 text-left font-semibold text-slate-600">รหัสวิชา</th>
+                        <th class="px-4 py-3 text-left font-semibold text-slate-600">ชื่อรายวิชา</th>
+                        <th class="px-4 py-3 text-left font-semibold text-slate-600">กลุ่ม</th>
+                        <th class="px-4 py-3 text-left font-semibold text-slate-600">สอบกลางภาค</th>
+                        <th class="px-4 py-3 text-left font-semibold text-slate-600">สอบปลายภาค</th>
+                      </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-200 bg-white">
+                      <tr>
+                        <th class="px-4 py-4 text-left font-semibold text-slate-700">10301211</th>
+                        <td class="px-4 py-4">
+                          <div class="text-sm font-semibold text-slate-900">คณิตศาสตร์สำหรับวิทยาศาสตร์คอมพิวเตอร์</div>
+                          <div class="text-xs text-slate-500">Mathematics for Computer Science</div>
+                        </td>
+                        <td class="px-4 py-4">1</td>
+                        <td class="px-4 py-4"> (C) 28 ส.ค. 2569<br />เวลา 08:00-11:00</td>
+                        <td class="px-4 py-4"> (C) 27 ต.ค. 2569<br />เวลา 08:00-11:00</td>
+                      </tr>
+                      <tr>
+                        <th class="px-4 py-4 text-left font-semibold text-slate-700">10301222</th>
+                        <td class="px-4 py-4">
+                          <div class="text-sm font-semibold text-slate-900">โครงสร้างข้อมูลและอัลกอริทึม</div>
+                          <div class="text-xs text-slate-500">Data Structure and Algorithm</div>
+                        </td>
+                        <td class="px-4 py-4">1</td>
+                        <td class="px-4 py-4 text-slate-500">—</td>
+                        <td class="px-4 py-4"> (C) 20 ต.ค. 2569<br />เวลา 12:00-15:00</td>
+                      </tr>
+                      <tr>
+                        <th class="px-4 py-4 text-left font-semibold text-slate-700">10301223</th>
+                        <td class="px-4 py-4">
+                          <div class="text-sm font-semibold text-slate-900">ฐานข้อมูลเชิงสัมพันธ์</div>
+                          <div class="text-xs text-slate-500">Structure Relational Database</div>
+                        </td>
+                        <td class="px-4 py-4">1</td>
+                        <td class="px-4 py-4"> (C) 26 ส.ค. 2569<br />เวลา 15:30-18:30</td>
+                        <td class="px-4 py-4"> (C) 22 ต.ค. 2569<br />เวลา 15:30-18:30</td>
+                      </tr>
+                      <tr>
+                        <th class="px-4 py-4 text-left font-semibold text-slate-700">10301225</th>
+                        <td class="px-4 py-4">
+                          <div class="text-sm font-semibold text-slate-900">วิศวกรรมซอฟต์แวร์</div>
+                          <div class="text-xs text-slate-500">Software Engineering</div>
+                        </td>
+                        <td class="px-4 py-4">1</td>
+                        <td class="px-4 py-4 text-slate-500">—</td>
+                        <td class="px-4 py-4 text-slate-500">—</td>
+                      </tr>
+                      <tr>
+                        <th class="px-4 py-4 text-left font-semibold text-slate-700">10301231</th>
+                        <td class="px-4 py-4">
+                          <div class="text-sm font-semibold text-slate-900">เว็บเทคโนโลยี</div>
+                          <div class="text-xs text-slate-500">Web Technology</div>
+                        </td>
+                        <td class="px-4 py-4">1</td>
+                        <td class="px-4 py-4 text-slate-500">—</td>
+                        <td class="px-4 py-4 text-slate-500">—</td>
+                      </tr>
+                      <tr>
+                        <th class="px-4 py-4 text-left font-semibold text-slate-700">10700313</th>
+                        <td class="px-4 py-4">
+                          <div class="text-sm font-semibold text-slate-900">ภาษาอังกฤษเชิงวิทยาศาสตร์และนวัตกรรม</div>
+                          <div class="text-xs text-slate-500">English for Science and Innovation</div>
+                        </td>
+                        <td class="px-4 py-4">2</td>
+                        <td class="px-4 py-4 text-slate-500">—</td>
+                        <td class="px-4 py-4 text-slate-500">—</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                <p class="mt-3 text-sm text-slate-500">← เลื่อนซ้าย–ขวาเพื่อดูตารางเต็ม →</p>
+
+                <div class="mt-4 flex flex-wrap gap-2 text-sm text-slate-500">
+                  <span class="font-semibold text-slate-700">หมายเหตุ</span>
+                  <span class="rounded-full bg-slate-100 px-3 py-1">C = Lecture</span>
+                  <span class="rounded-full bg-slate-100 px-3 py-1">L = Lab</span>
+                  <span class="rounded-full bg-slate-100 px-3 py-1">R = ประชุม</span>
+                  <span class="rounded-full bg-slate-100 px-3 py-1">S = Self Study</span>
+                  <span class="rounded-full bg-slate-100 px-3 py-1">T = คิว</span>
+                </div>
+              </article>
+
+              <article class="rounded-3xl border border-slate-200 bg-white p-5 shadow-sm">
+                <h2 class="text-lg font-semibold text-slate-900">Thesis</h2>
+                <div class="mt-4 rounded-3xl border border-dashed border-slate-200 bg-slate-50 px-4 py-6 text-center text-sm text-slate-500">
+                  * ไม่มีข้อมูล *
+                </div>
+              </article>
+
+              <a href="#page-title" class="inline-flex items-center gap-2 text-sm font-medium text-slate-700 transition hover:text-slate-900">
+                <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4">
+                  <path d="M12 19V5M5 12l7-7 7 7" />
+                </svg>
+                กลับขึ้นด้านบน
+              </a>
+            </section>
+          </div>
+        </main>
+      </div>
+
+      <footer class="border-t border-slate-200 bg-white">
+        <div class="mx-auto flex flex-col gap-4 px-4 py-5 text-sm text-slate-600 sm:flex-row sm:items-center sm:justify-between max-w-7xl">
+          <ul class="flex flex-wrap gap-3">
+            <li><a href="#" class="transition hover:text-slate-900">สนอ.</a></li>
+            <li><a href="#" class="transition hover:text-slate-900">กยศ.</a></li>
+            <li><a href="#" class="transition hover:text-slate-900">สมศ.</a></li>
+            <li><a href="#" class="transition hover:text-slate-900">Vision Net Co., Ltd.</a></li>
+          </ul>
+          <p class="text-slate-500">
+            Powered by Vision Net, 1995 – 2010 · Contact Staff: กลุ่มภารกิจทะเบียนเรียน ประมวลผล และรับเข้า 0-5387-3458
           </p>
         </div>
       </footer>
