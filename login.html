@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="th">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>เข้าสู่ระบบ REG | มหาวิทยาลัยแม่โจ้</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kanit:wght@500;600;700&family=Prompt:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="login.css" />
+  </head>
+  <body>
+    <div class="ambient-bg" aria-hidden="true">
+      <span class="blob blob-a"></span>
+      <span class="blob blob-b"></span>
+      <span class="blob blob-c"></span>
+      <div class="grain"></div>
+    </div>
+
+    <main class="page-main">
+      <section class="login-panel" aria-label="เข้าสู่ระบบระบบทะเบียนนักศึกษา">
+        <header class="brand-header">
+          <div class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 48 48" width="30" height="30">
+              <path
+                d="M24 4 C 14 4, 6 12, 6 24 C 6 36, 14 44, 24 44 C 34 44, 42 36, 42 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="3"
+                stroke-linecap="round"
+              />
+              <path
+                d="M24 14 C 19 14, 15 18, 15 24 C 15 30, 19 34, 24 34"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="3"
+                stroke-linecap="round"
+                opacity="0.55"
+              />
+            </svg>
+          </div>
+          <h1 class="brand-title">REG</h1>
+          <p class="brand-subtitle">ระบบทะเบียนนักศึกษา มหาวิทยาลัยแม่โจ้</p>
+        </header>
+
+        <ul class="auth-options" role="list">
+          <li>
+            <button type="button" class="auth-option">
+              <span class="auth-icon auth-icon--ms" aria-hidden="true">
+                <span></span><span></span><span></span><span></span>
+              </span>
+              <span class="auth-copy">
+                <span class="auth-name">เข้าสู่ระบบด้วย Microsoft 365</span>
+                <span class="auth-desc"
+                  >ปลอดภัยด้วย MFA · รองรับผู้ใช้จำนวนมาก</span
+                >
+              </span>
+              <span class="auth-badge">แนะนำ</span>
+            </button>
+          </li>
+          <li>
+            <button type="button" class="auth-option">
+              <span class="auth-icon auth-icon--thaid" aria-hidden="true"
+                >ThaID</span
+              >
+              <span class="auth-copy">
+                <span class="auth-name">เข้าสู่ระบบด้วย ThaID</span>
+                <span class="auth-desc">ยืนยันตัวตนด้วยบัตรประชาชนดิจิทัล</span>
+              </span>
+              <span class="auth-badge">แนะนำ</span>
+            </button>
+          </li>
+          <li>
+            <button type="button" class="auth-option">
+              <span class="auth-icon auth-icon--mju" aria-hidden="true"
+                >MJU</span
+              >
+              <span class="auth-copy">
+                <span class="auth-name">เข้าสู่ระบบด้วย MJU Mobile App</span>
+                <span class="auth-desc"
+                  >สะดวก รวดเร็ว ด้วยแอปพลิเคชันของมหาวิทยาลัย</span
+                >
+              </span>
+            </button>
+          </li>
+        </ul>
+
+        <div class="divider" role="separator">
+          <span>หรือเข้าสู่ระบบด้วยรหัสผ่าน</span>
+        </div>
+
+        <form class="credentials-form" action="#" method="post">
+          <div class="field field--split">
+            <span class="field-icon" aria-hidden="true">
+              <svg
+                viewBox="0 0 24 24"
+                width="18"
+                height="18"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <circle cx="12" cy="8" r="4" />
+                <path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8" />
+              </svg>
+            </span>
+            <label for="username" class="sr-only">รหัสผู้ใช้</label>
+            <input
+              type="text"
+              id="username"
+              name="username"
+              autocomplete="username"
+              placeholder="ชื่อผู้ใช้งาน"
+              required
+            />
+            <span class="field-suffix">@mju.ac.th</span>
+          </div>
+
+          <div class="field">
+            <span class="field-icon" aria-hidden="true">
+              <svg
+                viewBox="0 0 24 24"
+                width="18"
+                height="18"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <rect x="4" y="10" width="16" height="10" rx="2" />
+                <path d="M8 10V7a4 4 0 0 1 8 0v3" />
+              </svg>
+            </span>
+            <label for="password" class="sr-only">รหัสผ่าน</label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              autocomplete="current-password"
+              placeholder="รหัสผ่าน"
+              required
+            />
+          </div>
+
+          <button type="submit" class="btn-primary">เข้าสู่ระบบ</button>
+        </form>
+      </section>
+
+      <footer class="site-footer">
+        <p class="footer-links">
+          <a href="#">ลืมรหัสผ่าน</a>
+          <span class="footer-sep" aria-hidden="true">·</span>
+          <a href="#">เปลี่ยนรหัสผ่าน</a>
+        </p>
+        <p class="footer-contact"><a href="#">ติดต่อเรา</a></p>
+        <p class="footer-copy">
+          2024 - 2026 © มหาวิทยาลัยแม่โจ้ Maejo University
+        </p>
+      </footer>
+    </main>
+  </body>
+</html>
