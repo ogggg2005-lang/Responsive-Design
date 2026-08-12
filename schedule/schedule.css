@@ -419,7 +419,6 @@ table {
   background: var(--mint-100);
   white-space: normal;
   min-width: 150px;
-   background-color: #b0f7c0;
 }
 .class-code {
   display: block;
