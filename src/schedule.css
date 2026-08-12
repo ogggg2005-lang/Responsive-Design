@@ -416,9 +416,10 @@ table {
   min-width: 92px;
 }
 .timetable tbody td.class-cell {
-  background: var(--mint-100);
+  background: var(--mint-200);
   white-space: normal;
   min-width: 150px;
+  
 }
 .class-code {
   display: block;
